@@ -1,23 +1,17 @@
-// Abyssinian Ethiopian Restaurant Website
-// Single‑file React component for quick preview (e.g. in CodeSandbox or Vite). 
-// Uses React + TailwindCSS (via CDN) + shadcn/ui components.
-// For production, split into separate files & add routing (e.g. React Router, Next.js).
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
-// —— CONSTANTS ——————————————————————————————————————— //
 const RESTAURANT = {
   name: "Abyssinian Ethiopian Restaurant",
   address: "100 Main St, Middletown, CT 06457",
-  phone: "860‑807‑3798",
+  phone: "(860) 794-1960",
   hours: [
     { days: "Tue – Fri", time: "11:00 am – 9:00 pm" },
     { days: "Sat & Sun", time: "12:00 pm – 9:00 pm" },
-    { days: "Monday",   time: "Closed" }
+    { days: "Monday", time: "Closed" }
   ]
 };
 
@@ -67,15 +61,16 @@ const MENU = {
   ]
 };
 
-// —— COMPONENTS —————————————————————————————————————— //
 const Hero = () => (
   <section className="relative h-[80vh] bg-cover bg-center" style={{backgroundImage:'url(https://images.unsplash.com/photo-1582268611952-7a2b837446d5?auto=format&fit=crop&w=1280&q=80)'}}>
     <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center text-white p-4">
       <h1 className="text-4xl md:text-6xl font-bold tracking-wide mb-4 drop-shadow-lg">{RESTAURANT.name}</h1>
       <p className="max-w-xl mx-auto text-lg md:text-xl mb-6">Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.</p>
       <div className="space-x-4">
-        <Button size="lg" className="text-lg">Order Online</Button>
-        <Button variant="secondary" size="lg" className="text-lg">Reserve a Table</Button>
+        <a href="https://order.online/business/abyssinian-ethiopian-restaurant-589644" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="text-lg">Order Online</Button>
+        </a>
+        <Button variant="secondary" size="lg" className="text-lg" onClick={() => document.getElementById("reserveModal").click()}>Reserve a Table</Button>
       </div>
     </div>
   </section>
@@ -136,18 +131,24 @@ const GallerySection = () => (
     <SectionTitle>Gallery</SectionTitle>
     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
       {[
-        "https://images.unsplash.com/photo-1542838686-34658eebf9b9?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1606857521015-f8a80c9c31f4?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1632840050862-bfe859988779?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1598514983431-b1ba3dd2de70?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d4dba6c?auto=format&fit=crop&w=800&q=80"
+        "/img/gallary1.jpg",
+        "/img/gallary2.jpg",
+        "/img/gallary3.jpg",
+        "/img/gallary4.jpg",
+        "/img/gallary5.jpg",
+        "/img/gallary6.jpg"
       ].map((src,i)=>(
-        <img key={i} src={src} alt="Dish" className="w-full h-60 object-cover rounded-xl shadow-md"/>
+        <img
+          key={i}
+          src={src}
+          alt={`Gallery ${i + 1}`}
+          className="w-full h-60 object-cover rounded-xl shadow-md"
+        />
       ))}
     </div>
   </section>
 );
+
 
 const ContactSection = () => (
   <section id="contact" className="bg-gray-900 text-gray-100 py-12 px-4">
@@ -176,34 +177,26 @@ const Footer = () => (
   </footer>
 );
 
-// —— MAIN APP ———————————————————————————————————————— //
 export default function App() {
   const [navOpen,setNavOpen]=useState(false);
   return (
     <div className="font-sans">
-      {/* NavBar */}
       <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur shadow z-40">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <a href="#" className="text-xl font-bold text-amber-700">Abyssinian</a>
           <button className="md:hidden" onClick={()=>setNavOpen(o=>!o)}>
-            <span className="sr-only">Toggle Menu</span>
-            ☰
+            <span className="sr-only">Toggle Menu</span>☰
           </button>
           <nav className={`space-x-6 md:flex ${navOpen?"block mt-4":"hidden md:block"}`}>
-            {[
-              {label:"Home",href:"#"},
-              {label:"Menu",href:"#menu"},
-              {label:"About",href:"#about"},
-              {label:"Gallery",href:"#gallery"},
-              {label:"Contact",href:"#contact"}
-            ].map(link=>
-              <a key={link.href} href={link.href} className="text-gray-700 hover:text-amber-700 font-medium block md:inline">{link.label}</a>
+            {["Home","Menu","About","Gallery","Contact"].map(label =>
+              <a key={label} href={`#${label.toLowerCase()}`} className="text-gray-700 hover:text-amber-700 font-medium block md:inline">{label}</a>
             )}
-            <Button size="sm" className="hidden md:inline">Order</Button>
+            <a href="https://order.online/business/abyssinian-ethiopian-restaurant-589644" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="hidden md:inline">Order</Button>
+            </a>
           </nav>
         </div>
       </header>
-
       <main className="pt-16">
         <Hero/>
         <MenuSection/>
@@ -212,8 +205,6 @@ export default function App() {
         <ContactSection/>
       </main>
       <Footer/>
-
-      {/* Reservation Modal Placeholder */}
       <Dialog>
         <DialogTrigger asChild>
           <button id="reserveModal" className="hidden" />
