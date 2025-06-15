@@ -62,8 +62,16 @@ const MENU = {
 };
 
 const Hero = () => (
-  <section className="relative h-[80vh] bg-cover bg-center" style={{backgroundImage:'url(https://images.unsplash.com/photo-1582268611952-7a2b837446d5?auto=format&fit=crop&w=1280&q=80)'}}>
-    <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center text-white p-4">
+  <section className="relative h-[80vh] overflow-hidden">
+    <video
+      className="absolute top-0 left-0 w-full h-full object-cover"
+      src="/img/splash.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
+    <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white p-4">
       <h1 className="text-4xl md:text-6xl font-bold tracking-wide mb-4 drop-shadow-lg">{RESTAURANT.name}</h1>
       <p className="max-w-xl mx-auto text-lg md:text-xl mb-6">Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.</p>
       <div className="space-x-4">
@@ -75,6 +83,8 @@ const Hero = () => (
     </div>
   </section>
 );
+
+
 
 const SectionTitle = ({children}) => (
   <h2 className="text-3xl font-semibold text-amber-700 mb-6 text-center tracking-wide">{children}</h2>
