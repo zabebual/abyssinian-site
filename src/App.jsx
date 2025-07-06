@@ -65,7 +65,7 @@ const Hero = () => (
   <section className="relative h-[80vh] overflow-hidden">
     <video
       className="absolute top-0 left-0 w-full h-full object-cover"
-      src="/img/splash.mp4"
+      src="/img/splash_compressed.mp4"
       autoPlay
       loop
       muted
@@ -193,7 +193,10 @@ export default function App() {
     <div className="font-sans">
       <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur shadow z-40">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          <a href="#" className="text-xl font-bold text-amber-700">Abyssinian</a>
+          <a href="#" className="flex items-center">
+          <img src="/img/abyssinian_logo.jpg" alt="Abyssinian Logo" className="h-12 w-auto object-contain" />
+        </a>
+
           <button className="md:hidden" onClick={()=>setNavOpen(o=>!o)}>
             <span className="sr-only">Toggle Menu</span>☰
           </button>
