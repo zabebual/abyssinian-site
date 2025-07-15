@@ -127,11 +127,11 @@ const MenuCategory = ({ title, items }) => {
             <Card key={i} className="overflow-hidden border-none shadow hover:shadow-lg transition">
               <div className="flex">
                 <img
-                  src={`/public/img/${baseFile}.jpg`}
+                  src={`/img/${baseFile}.jpg`}
                   alt={item.name}
                   className="w-28 h-28 object-cover rounded-l-md hidden sm:block"
                   onError={(e) => {
-                    const fallback = `/public/img/${baseFile}.png`;
+                    const fallback = `/img/${baseFile}.png`;
                     if (!e.target.dataset.fallbackTried) {
                       e.target.src = fallback;
                       e.target.dataset.fallbackTried = true;
