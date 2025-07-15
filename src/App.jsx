@@ -17,47 +17,59 @@ const RESTAURANT = {
 
 const MENU = {
   appetizers: [
-    { name: "Sambusa (Veg or Chicken)", price: 9.95, desc: "Three crispy pastries filled with spiced vegetables or chicken." },
-    { name: "Key Sir Salad", price: 9.95, desc: "Ethiopian beetroot & potato salad with red onion and garlic." },
-    { name: "Ayib Be’ Gomen", price: 9.95, desc: "Homemade cottage cheese with berbere, collards & herbs." },
-    { name: "Dibulbul Tibs", price: 9.95, desc: "Marinated meatballs sautéed with onion, green pepper & herbs." },
-    { name: "Timatim Salad", price: 9.95, desc: "Tomatoes, onion & jalapeños tossed in herbed dressing." },
-    { name: "Falafel", price: 9.95, desc: "Golden‑brown chickpea fritters with fresh herb salad." }
+    { number: 1, name: "Sambusa", price: 9.95, desc: "3 spiced pastries filled with a choice of vegetable or chicken." },
+    { number: 2, name: "Key Sir Selata", price: 9.95, desc: "Ethiopian beetroot & potato with red onion, jalapeño, and cilantro." },
+    { number: 3, name: "Ayib B’e Gomen", price: 9.95, desc: "Fresh collards with cottage cheese, berbere spice & herbs." },
+    { number: 4, name: "Dibulbul Tibs", price: 9.95, desc: "Marinated meatballs with onions, green peppers & fresh salad." },
+    { number: 5, name: "Timatim Salad", price: 9.95, desc: "Fresh tomatoes, onions, green peppers, jalapeños in house dressing." },
+    { number: 6, name: "Falafel", price: 9.95, desc: "Crispy chickpea fritters with herbs, garlic & fresh salad." }
   ],
   vegetarian: [
-    { name: "Shiro Wot", price: 18.95, desc: "Ground chickpeas simmered in berbere sauce." },
-    { name: "Kosta", price: 18.95, desc: "Spinach & potatoes cooked in a mild spice blend." },
-    { name: "Misir Wot", price: 18.95, desc: "Red lentils stewed in berbere." },
-    { name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split‑peas in a mild garlic & olive‑oil sauce." },
-    { name: "Dinch Wot", price: 18.95, desc: "Potatoes stewed with berbere, garlic & ginger." },
-    { name: "Defen Misir Wot", price: 18.95, desc: "Brown lentils in a lightly spiced sauce." },
-    { name: "Veggie Be’yaynetu (Six‑Item Combo)", price: 21.95, desc: "Sampler platter: Shiro, Misir, Alcha Kik, Cabbage, Fossolia & Brown lentils." }
-  ],
-  beef: [
-    { name: "Yesiga Wot Be‑Denish", price: 15.95, desc: "Beef & potatoes in rich red‑pepper sauce with garlic & cardamom." },
-    { name: "A‑Yesega Wot", price: 16.95, desc: "Tender beef simmered with ginger, garlic, onions & green pepper." },
-    { name: "B‑Yesega Alicha Be‑Dinish", price: 15.95, desc: "Beef & potatoes in mild alicha sauce with carrots & garlic." },
-    { name: "Kitfo (Fri & Sat)", price: 16.95, desc: "Ethiopian steak tartar seasoned with herb butter & mitmita." },
-    { name: "Yebere Tibs", price: 16.95, desc: "Sautéed beef strips with onion, garlic & jalapeño." },
-    { name: "Bozena Shiro", price: 15.95, desc: "Spiced minced beef blended with chickpea stew, served bubbling hot." }
+    { number: 7, name: "Shiro Wot", price: 18.95, desc: "Ground chickpeas simmered with berbere sauce." },
+    { number: 8, name: "Kosta", price: 18.95, desc: "Swiss chard & potatoes cooked in mild spices." },
+    { number: 9, name: "Timtimo Wot", price: 18.95, desc: "Lentils in spicy berbere, onions & garlic." },
+    { number: 10, name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split peas in a mild garlic sauce." },
+    { number: 11, name: "Dinch Wot", price: 18.95, desc: "Potatoes stewed with berbere, garlic & ginger." },
+    { number: 12, name: "Difin Misir Wot", price: 18.95, desc: "Brown lentils in a mild garlic & olive oil sauce." },
+    { number: 13, name: "Veggie Combo (5 items)", price: 21.95, desc: "Timtimo, Alcha Kik, Difin Misir, cabbage, and fossolia." },
+    { number: 14, name: "Special Veggie Combo (8 items)", price: 26.95, desc: "Shiro, Kosta, Timtimo, Alcha Kik, Dinch, Difin Misir, cabbage & fossolia." }
   ],
   chicken: [
-    { name: "Yedoro Wot", price: 16.95, desc: "Chicken on‑the‑bone slow‑simmered in berbere with boiled egg & cottage cheese." },
-    { name: "Doro Tibs", price: 14.95, desc: "Grilled chicken tossed with awaze, garlic & green pepper." }
+    { number: 15, name: "Doro Wot", price: 19.95, desc: "Spiced chicken & egg stew with berbere, onions, ginger, garlic & kibbe." },
+    { number: 16, name: "Doro Tibs", price: 19.95, desc: "Grilled chicken with garlic, awaze, onions, ginger & green pepper." }
+  ],
+  beef: [
+    { number: 17, name: "Awaze Tibs", price: 19.95, desc: "Beef with awaze sauce, herbs, tomatoes & jalapeño." },
+    { number: 18, name: "Derek Tibs", price: 21.95, desc: "Beef stir fry with berbere, cardamom, cloves, rosemary & olive oil." },
+    { number: 19, name: "Alcha Sega Wot", price: 19.95, desc: "Beef braised in turmeric, garlic, ginger & clarified butter." },
+    { number: 20, name: "Key Sega Wot", price: 21.95, desc: "Beef stew with berbere, potatoes, garlic, tomato, ginger & kibbe." },
+    { number: 21, name: "Gored Gored", price: 22.95, desc: "Raw beef cubes with awaze & kibbe." },
+    { number: 22, name: "Kitfo", price: 23.95, desc: "Minced beef with mitmita & kibbe. Served raw/medium/well-done with ayib & gomen." },
+    { number: 23, name: "Bozena Shiro", price: 19.95, desc: "Chickpea stew with beef, onions, garlic & tomato." }
   ],
   lamb: [
-    { name: "Yebeg Tibs", price: 17.95, desc: "Lamb sautéed with onion, tomato, peppers & aromatics." }
+    { number: 24, name: "Lamb Tibs", price: 24.95, desc: "Lamb with herbs, onion, tomatoes & jalapeño." }
+  ],
+  fish: [
+    { number: 25, name: "Asa Tibs", price: 21.95, desc: "Grilled salmon in red sauce with berbere, onions & clarified butter." },
+    { number: 26, name: "Rice with Fish", price: 21.95, desc: "Flaky salmon on seasoned basmati rice with sautéed vegetables." }
+  ],
+  rice: [
+    { number: 27, name: "Rice with Beef", price: 19.95, desc: "Beef sautéed with spices, served over basmati rice & vegetables." },
+    { number: 28, name: "Rice with Chicken", price: 19.95, desc: "Spiced chicken breast over basmati rice, garlic, onion & veggies." }
   ],
   desserts: [
-    { name: "Tea Cake", price: 5.5, desc: "Light, fragrant sponge – perfect with coffee." },
-    { name: "Marble Cake", price: 6, desc: "Classic vanilla‑chocolate swirl." },
-    { name: "Tuxedo Cake", price: 6.5, desc: "Layers of dark chocolate & vanilla cream." }
+    { number: 29, name: "Baklava", price: 7.95, desc: "Flaky pastry with nuts & syrup." }
   ],
   beverages: [
-    { name: "Ethiopian Organic Coffee (Jebena)", price: 4.5, desc: "Freshly roasted & brewed in traditional clay pot." },
-    { name: "Macchiato", price: 4, desc: "Ethiopian espresso with a dash of steamed milk." },
-    { name: "Black Tea / Green Tea", price: 3.5, desc: "Loose‑leaf, served hot." },
-    { name: "Herbal & Ginger Teas", price: 3.5, desc: "Caffeine‑free infusions to soothe & revive." }
+    { number: 30, name: "Ethiopian Organic Coffee", price: 3.95, desc: "Freshly brewed Ethiopian coffee." },
+    { number: 31, name: "Jebena Coffee Ceremony", price: 19.95, desc: "Traditional coffee served in jebena pot." },
+    { number: 32, name: "Shahi Green/Red/Herbal/Ginger/Black Tea", price: 2.95, desc: "Selection of teas including mint, lemon & Lipton." },
+    { number: 33, name: "Soda & Sparkling Water", price: 2.75, desc: "Coke, Diet Coke, Sprite, Ginger Ale, Arizona Iced Tea, Sparkling Water." }
+  ],
+  extras: [
+    { number: 34, name: "Injera", price: 2.95, desc: "Gluten-free Ethiopian flatbread made from teff." },
+    { number: 35, name: "Rice", price: 2.95, desc: "Steamed basmati rice." }
   ]
 };
 
@@ -90,24 +102,63 @@ const SectionTitle = ({children}) => (
   <h2 className="text-3xl font-semibold text-amber-700 mb-6 text-center tracking-wide">{children}</h2>
 );
 
-const MenuCategory = ({title, items}) => (
-  <div className="mb-12">
-    <h3 className="text-2xl font-medium text-amber-600 mb-4">{title}</h3>
-    <div className="grid md:grid-cols-2 gap-6">
-      {items.map((item,i)=>(
-        <Card key={i} className="hover:shadow-xl transition">
-          <CardContent className="p-4 flex justify-between gap-4">
-            <div>
-              <h4 className="font-semibold text-lg">{item.name}</h4>
-              <p className="text-sm text-gray-600 leading-snug">{item.desc}</p>
-            </div>
-            <span className="text-amber-700 font-bold whitespace-nowrap">${item.price.toFixed(2)}</span>
-          </CardContent>
-        </Card>
-      ))}
+const MenuCategory = ({ title, items }) => {
+  // Optional notes for selected categories
+  const NOTES = {
+    vegetarian: "(#7 – #12 Served with 3 Veggie sides of your choice from #13, with Injera)",
+    chicken: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
+    beef: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
+    lamb: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
+    fish: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
+  };
+
+  const note = NOTES[title.toLowerCase()];
+
+  return (
+    <div className="mb-16">
+      <h3 className="text-2xl font-medium text-amber-600 mb-2">{title}</h3>
+      {note && (
+        <p className="text-sm text-amber-700 italic mb-4">{note}</p>
+      )}
+      <div className="grid md:grid-cols-2 gap-6">
+        {items.map((item, i) => {
+          const baseFile = item.name.toLowerCase().replace(/[^a-z0-9]/g, "_");
+          return (
+            <Card key={i} className="overflow-hidden border-none shadow hover:shadow-lg transition">
+              <div className="flex">
+                <img
+                  src={`/public/img/${baseFile}.jpg`}
+                  alt={item.name}
+                  className="w-28 h-28 object-cover rounded-l-md hidden sm:block"
+                  onError={(e) => {
+                    const fallback = `/public/img/${baseFile}.png`;
+                    if (!e.target.dataset.fallbackTried) {
+                      e.target.src = fallback;
+                      e.target.dataset.fallbackTried = true;
+                    } else {
+                      e.target.style.display = 'none';
+                    }
+                  }}
+                />
+                <CardContent className="p-4 flex-1">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="font-semibold text-lg">{item.number}. {item.name}</h4>
+                      <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
+                    </div>
+                    <span className="text-amber-700 font-bold whitespace-nowrap ml-4">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const MenuSection = () => (
   <section id="menu" className="container mx-auto px-4 py-20">
