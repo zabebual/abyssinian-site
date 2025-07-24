@@ -87,7 +87,7 @@ const Hero = () => (
       <h1 className="text-4xl md:text-6xl font-bold tracking-wide mb-4 drop-shadow-lg">{RESTAURANT.name}</h1>
       <p className="max-w-xl mx-auto text-lg md:text-xl mb-6">Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.</p>
       <div className="space-x-4">
-        <a href="https://order.online/business/abyssinian-ethiopian-restaurant-589644" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.order.store/store/abyssinian-ethiopian-restaurant-100-main-street-middletown/fP4XdguOVWGjyLWtAwQeGw" target="_blank" rel="noopener noreferrer">
           <Button size="lg" className="text-lg">Order Online</Button>
         </a>
         <Button variant="secondary" size="lg" className="text-lg" onClick={() => document.getElementById("reserveModal").click()}>Reserve a Table</Button>
