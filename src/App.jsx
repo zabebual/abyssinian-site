@@ -6,11 +6,10 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 
 const RESTAURANT = {
   name: "Abyssinian Ethiopian Restaurant",
-  address: "100 Main St, Middletown, CT 06457",
+  address: "100 D Main St, Middletown, CT 06457",
   phone: "(860) 794-1960",
   hours: [
-    { days: "Tue – Fri", time: "11:00 am – 9:00 pm" },
-    { days: "Sat & Sun", time: "12:00 pm – 9:00 pm" },
+    { days: "Tue – Sun", time: "12:00 am – 9:00 pm" },
     { days: "Monday", time: "Closed" }
   ]
 };
@@ -20,56 +19,57 @@ const MENU = {
     { number: 1, name: "Sambusa", price: 9.95, desc: "3 spiced pastries filled with a choice of vegetable or chicken." },
     { number: 2, name: "Key Sir Selata", price: 9.95, desc: "Ethiopian beetroot & potato with red onion, jalapeño, and cilantro." },
     { number: 3, name: "Ayib B’e Gomen", price: 9.95, desc: "Fresh collards with cottage cheese, berbere spice & herbs." },
-    { number: 4, name: "Dibulbul Tibs", price: 9.95, desc: "Marinated meatballs with onions, green peppers & fresh salad." },
-    { number: 5, name: "Timatim Salad", price: 9.95, desc: "Fresh tomatoes, onions, green peppers, jalapeños in house dressing." },
-    { number: 6, name: "Falafel", price: 9.95, desc: "Crispy chickpea fritters with herbs, garlic & fresh salad." }
+    { number: 4, name: "Di bulbul Tibs", price: 9.95, desc: "Marinated meatballs with onions, green peppers & fresh salad." },
+    { number: 5, name: "Timatim Salad", price: 9.95, desc: "Abyssinian style fresh tomatoes, onions, green peppers, jalapenos with house dressing." },
+    { number: 6, name: "Falafel", price: 9.95, desc: "Crispy, golden-brown seasoned ground chickpeas, fresh herbs and garlic with fresh salad." }
   ],
   vegetarian: [
     { number: 7, name: "Shiro Wot", price: 18.95, desc: "Ground chickpeas simmered with berbere sauce." },
-    { number: 8, name: "Kosta", price: 18.95, desc: "Swiss chard & potatoes cooked in mild spices." },
-    { number: 9, name: "Timtimo Wot", price: 18.95, desc: "Lentils in spicy berbere, onions & garlic." },
-    { number: 10, name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split peas in a mild garlic sauce." },
-    { number: 11, name: "Dinch Wot", price: 18.95, desc: "Potatoes stewed with berbere, garlic & ginger." },
-    { number: 12, name: "Difin Misir Wot", price: 18.95, desc: "Brown lentils in a mild garlic & olive oil sauce." },
-    { number: 13, name: "Veggie Combo (5 items)", price: 21.95, desc: "Timtimo, Alcha Kik, Difin Misir, cabbage, and fossolia." },
-    { number: 14, name: "Special Veggie Combo (8 items)", price: 26.95, desc: "Shiro, Kosta, Timtimo, Alcha Kik, Dinch, Difin Misir, cabbage & fossolia." }
+    { number: 8, name: "Kosta", price: 18.95, desc: "Sauteed Swiss chard & potatoes slowly cooked in a blend of mild spices." },
+    { number: 9, name: "Misir Wot", price: 18.95, desc: "Lentils simmered in spicy Ethiopian berbere, vegetable oil onions and garlic." },
+    { number: 10, name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split peas cooked with flavored mild sauce, vegetable oil and garlic." },
+    { number: 11, name: "Difin Misir Wot", price: 18.95, desc: "Brown lentils simmered in a flavored mild sauce, olive oil and garlic." },
+    { number: 12, name: "Dinch Wot", price: 18.95, desc: "Stew potatoes spiced with berbere. Garlic, onion and ginger." },
+    { number: 13, name: "Veggie Combo (5 items)", price: 22.95, desc: "5 Veggie consists of Misir Wot, Alcha Kik Wot, Difin Misir Wot, Cabbage, and Fossolia (Ethiopian style green bean with carrot)." },
+    { number: 14, name: "Special Veggie Combo (8 items)", price: 27.95, desc: "8 All Vegetarian Option included Cabbage and Fossolia (Ethiopian style green bean with carrot)." },
+    { number: 15, name: "Abyssinian Special Meat/Veggie Platter", price: 29.95, desc: "Choice of Five different dishes from our all vegetarian options and Select Meat options: Doro Wot stew with egg, Alicha Sega Wot, Key Sega Wot." }
   ],
   chicken: [
-    { number: 15, name: "Doro Wot", price: 19.95, desc: "Spiced chicken & egg stew with berbere, onions, ginger, garlic & kibbe." },
-    { number: 16, name: "Doro Tibs", price: 19.95, desc: "Grilled chicken with garlic, awaze, onions, ginger & green pepper." }
+    { number: 16, name: "Doro Wot", price: 21.95, desc: "Richly spiced, fragrant, delicious chicken drumstick and egg stew slowly cooked onions, berbere, kibbe (spiced clarified butter), ginger, and garlic." },
+    { number: 17, name: "Doro Tibs", price: 19.95, desc: "Herb grilled chicken tossed with Garlic, awaze sauce, onions, ginger & green pepper." }
   ],
   beef: [
-    { number: 17, name: "Awaze Tibs", price: 19.95, desc: "Beef with awaze sauce, herbs, tomatoes & jalapeño." },
-    { number: 18, name: "Derek Tibs", price: 21.95, desc: "Beef stir fry with berbere, cardamom, cloves, rosemary & olive oil." },
-    { number: 19, name: "Alcha Sega Wot", price: 19.95, desc: "Beef braised in turmeric, garlic, ginger & clarified butter." },
-    { number: 20, name: "Key Sega Wot", price: 21.95, desc: "Beef stew with berbere, potatoes, garlic, tomato, ginger & kibbe." },
-    { number: 21, name: "Gored Gored", price: 22.95, desc: "Raw beef cubes with awaze & kibbe." },
-    { number: 22, name: "Kitfo", price: 23.95, desc: "Minced beef with mitmita & kibbe. Served raw/medium/well-done with ayib & gomen." },
-    { number: 23, name: "Bozena Shiro", price: 19.95, desc: "Chickpea stew with beef, onions, garlic & tomato." }
+    { number: 18, name: "Awaze Tibs", price: 19.95, desc: "Tender cube beef marinated & cooked with awaze sauce, herbs, tomatoes & jalapeno." },
+    { number: 19, name: "Derek Tibs", price: 21.95, desc: "Flavorful Ethiopian stir fry featuring chunks or strips of beef, berbere, cardamon, olive oil, traditional spices, rosemary and cloves." },
+    { number: 20, name: "Alcha Sega Wot", price: 19.95, desc: "Tender beef cubes braised with onion, garlic, ginger, turmeric, and kibe (clarified butter)." },
+    { number: 21, name: "Key Sega Wot", price: 21.95, desc: "Beef cubes stew seasoned with berbere, potato, olive oil, Ethiopian spices, tomatoes, fresh ginger, onions, Garlic and kibbe (clarified butter)." },
+    { number: 22, name: "Gored Gored", price: 22.95, desc: "Lean bottom round beef seasoned with awaze sauce, kibe (clarified butter)." },
+    { number: 23, name: "Kitfo", price: 24.95, desc: "Minced Beef That’s Marinated in Spices (Mitmita) And Kibbe (Clarified Butter), Two sides of Ayib. (homemade cottage cheese) and spiced collard greens. Can be ordered; raw/medium &   well done." },
+    { number: 24, name: "Bozena Shiro", price: 19.95, desc: "Stew seasoned mild chickpea powder cooked with onion, garlic, tomatoes and beef." }
   ],
   lamb: [
-    { number: 24, name: "Lamb Tibs", price: 24.95, desc: "Lamb with herbs, onion, tomatoes & jalapeño." }
+    { number: 25, name: "Lamb Tibs", price: 24.95, desc: "Tender Cubed Lamb Marinated & Cooked with Herbs, Onion, Tomatoes, Jalapeno." }
   ],
   fish: [
-    { number: 25, name: "Asa Tibs", price: 21.95, desc: "Grilled salmon in red sauce with berbere, onions & clarified butter." },
-    { number: 26, name: "Rice with Fish", price: 21.95, desc: "Flaky salmon on seasoned basmati rice with sautéed vegetables." }
+    { number: 26, name: "Asa Tibs", price: 21.95, desc: "Salmon grilled Abyssinian style simmered in red sauce & clarified butter, berbere, onion." }
   ],
   rice: [
-    { number: 27, name: "Rice with Beef", price: 19.95, desc: "Beef sautéed with spices, served over basmati rice & vegetables." },
-    { number: 28, name: "Rice with Chicken", price: 19.95, desc: "Spiced chicken breast over basmati rice, garlic, onion & veggies." }
+    { number: 27, name: "Rice with Beef", price: 19.95, desc: "Tender beef sauteed with aromatic spice, served over perfectly cooked rice and accompanied by sauteed vegetables." },
+    { number: 28, name: "Rice with Fish", price: 21.95, desc: "Fresh, flaky salmon seasoned with Ethiopian spiced and herbs, olive oil served over a bed of fragrant basmati rice." },
+    { number: 29, name: "Rice with Chicken", price: 19.95, desc: "Juicy, spiced Ethiopian style chicken breast cooked to perfection and served over flavorful basmati rice, garlic, and onion with sauteed vegetables." }
+  ],
+ extras: [
+    { number: 30, name: "Injera", price: 3.00, desc: "Gluten-free Ethiopian flatbread made from teff." },
+    { number: 31, name: "Rice", price: 3.00, desc: "Steamed basmati rice." }
   ],
   desserts: [
-    { number: 29, name: "Baklava", price: 7.95, desc: "Flaky pastry with nuts & syrup." }
+    { number: 32, name: "Baklava", price: 7.95, desc: "Flaky pastry layered with nuts and sweet syrup." }
   ],
   beverages: [
-    { number: 30, name: "Ethiopian Organic Coffee", price: 3.95, desc: "Freshly brewed Ethiopian coffee." },
-    { number: 31, name: "Jebena Coffee Ceremony", price: 19.95, desc: "Traditional coffee served in jebena pot." },
-    { number: 32, name: "Shahi Green/Red/Herbal/Ginger/Black Tea", price: 2.95, desc: "Selection of teas including mint, lemon & Lipton." },
-    { number: 33, name: "Soda & Sparkling Water", price: 2.75, desc: "Coke, Diet Coke, Sprite, Ginger Ale, Arizona Iced Tea, Sparkling Water." }
-  ],
-  extras: [
-    { number: 34, name: "Injera", price: 2.95, desc: "Gluten-free Ethiopian flatbread made from teff." },
-    { number: 35, name: "Rice", price: 2.95, desc: "Steamed basmati rice." }
+    { number: 33, name: "Soda", price: 3.49, desc: "Coke, Diet Coke, Sprite, Ginger Ale, Arizona Iced Tea, Sparkling Water." },
+    { number: 34, name: "Ethiopian Organic Coffee", price: 4.25, desc: "Freshly brewed Ethiopian coffee." },
+    { number: 35, name: "Jebena Coffee with Ceremony", price: 19.95, desc: "Traditional Ethiopian Organic coffee served in jebena pot for 2-4 person." },
+    { number: 36, name: "Shahi", price: 3.25, desc: "Green Tea Mint | Lemon, Pure Rooibos (Red Tea), (Herbal Tea) Chamomile Mint, Red Raspberry, & Ginger Tea, Black Tea, (Lipton)." }
   ]
 };
 
@@ -84,13 +84,55 @@ const Hero = () => (
       playsInline
     />
     <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white p-4">
-      <h1 className="text-4xl md:text-6xl font-bold tracking-wide mb-4 drop-shadow-lg">{RESTAURANT.name}</h1>
-      <p className="max-w-xl mx-auto text-lg md:text-xl mb-6">Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.</p>
-      <div className="space-x-4">
-        <a href="https://www.order.store/store/abyssinian-ethiopian-restaurant-100-main-street-middletown/fP4XdguOVWGjyLWtAwQeGw" target="_blank" rel="noopener noreferrer">
-          <Button size="lg" className="text-lg">Order Online</Button>
+      <h1 className="text-4xl md:text-6xl font-bold tracking-wide mb-4 drop-shadow-lg">
+        {RESTAURANT.name}
+      </h1>
+      <p className="max-w-xl mx-auto text-lg md:text-xl mb-6">
+        Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.
+      </p>
+      <div className="space-x-4 mb-6">
+        <Button variant="secondary" size="lg" className="text-lg" onClick={() => document.getElementById("reserveModal").click()}>
+          Reserve a Table
+        </Button>
+      </div>
+
+      {/* QR code ordering options */}
+      <div className="flex flex-wrap justify-center gap-6 items-center">
+        {/* DoorDash */}
+        <a
+          href="https://order.online/business/abyssinian-ethiopian-restaurant-589644"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/img/doordash_logo.png"
+            alt="Order on DoorDash"
+            className="h-12 w-auto"
+          />
         </a>
-        <Button variant="secondary" size="lg" className="text-lg" onClick={() => document.getElementById("reserveModal").click()}>Reserve a Table</Button>
+
+        {/* QR Code for new provider */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/img/qrcode.jpg"
+            alt="Order via QR Code"
+            className="h-24 w-24 rounded shadow-md"
+          />
+          <span className="text-sm mt-1 text-white">Scan to Order</span>
+        </div>
+
+        {/* Dine Online */}
+        <a
+          href="https://abyssiniaethiopianrestaurant.dine.online"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/img/dine_online_logo.png"
+            alt="Order on Dine.Online"
+            className="h-12 w-auto"
+          />
+        </a>
       </div>
     </div>
   </section>
@@ -105,7 +147,7 @@ const SectionTitle = ({children}) => (
 const MenuCategory = ({ title, items }) => {
   // Optional notes for selected categories
   const NOTES = {
-    vegetarian: "(#7 – #12 Served with 3 Veggie sides of your choice from #13, with Injera)",
+    vegetarian: "(#7 – #12 Served with two sides of your choice from (#9, #10, #11) Cabbage, Fossolia with Injera)",
     chicken: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
     beef: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
     lamb: "(Served with 3 Veggie sides of your choice from #13, with Injera)",
