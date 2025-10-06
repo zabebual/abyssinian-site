@@ -90,54 +90,17 @@ const Hero = () => (
       <p className="max-w-xl mx-auto text-lg md:text-xl mb-6">
         Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.
       </p>
-      <div className="space-x-4 mb-6">
-        <Button variant="secondary" size="lg" className="text-lg" onClick={() => document.getElementById("reserveModal").click()}>
-          Reserve a Table
-        </Button>
-      </div>
 
-      {/* QR code ordering options */}
-      <div className="flex flex-wrap justify-center gap-6 items-center">
-        {/* DoorDash */}
-        <a
-          href="https://order.online/business/abyssinian-ethiopian-restaurant-589644"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/img/doordash_logo.png"
-            alt="Order on DoorDash"
-            className="h-12 w-auto"
-          />
-        </a>
-
-        {/* QR Code for new provider */}
-        <div className="flex flex-col items-center">
-          <img
-            src="/img/qrcode.jpg"
-            alt="Order via QR Code"
-            className="h-24 w-24 rounded shadow-md"
-          />
-          <span className="text-sm mt-1 text-white">Scan to Order</span>
-        </div>
-
-        {/* Dine Online */}
-        <a
-          href="https://abyssiniaethiopianrestaurant.dine.online"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/img/dine_online_logo.png"
-            alt="Order on Dine.Online"
-            className="h-12 w-auto"
-          />
-        </a>
-      </div>
+      {/* QR Code only, no buttons */}
+      <img
+        src="/img/qrcode.jpg"
+        alt="Order Online QR Code"
+        className="w-48 md:w-64 lg:w-72 rounded-lg shadow-lg border-2 border-white"
+      />
+      <p className="mt-2 text-sm text-white/80">Scan to order online</p>
     </div>
   </section>
 );
-
 
 
 const SectionTitle = ({children}) => (
@@ -239,13 +202,17 @@ const GallerySection = () => (
         "/img/gallary3.jpg",
         "/img/gallary4.jpg",
         "/img/gallary5.jpg",
-        "/img/gallary6.jpg"
-      ].map((src,i)=>(
+        "/img/gallary6.jpg",
+        "/img/gallary7.jpg",
+        "/img/gallary8.jpg",
+        "/img/gallary9.jpg",
+      ].map((src, i) => (
         <img
           key={i}
           src={src}
           alt={`Gallery ${i + 1}`}
           className="w-full h-60 object-cover rounded-xl shadow-md"
+          loading="lazy"
         />
       ))}
     </div>
