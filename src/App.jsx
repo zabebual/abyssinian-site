@@ -90,7 +90,7 @@ const Hero = () => (
         Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.
       </p>
 
-    <div className="flex flex-col items-center justify-center space-y-4 mt-6">
+    <div className="flex flex-row items-center justify-center space-y-4 mt-6">
       <img
         src="/img/qrcode.jpg"
         alt="Order Online QR Code"
@@ -102,7 +102,6 @@ const Hero = () => (
         className="w-80 h-auto rounded-lg shadow-lg"
       />
   </div>
-  </section>
 );
 
 
