@@ -97,6 +97,11 @@ const Hero = () => (
         className="w-48 md:w-64 lg:w-72 rounded-lg shadow-lg border-2 border-white"
       />
       <p className="mt-2 text-sm text-white/80">Scan to order online</p>
+      <img
+        src="/img/tg_closure.jpg"
+        alt="Thanksgiving Closure Notice"
+        className="w-80 h-auto rounded-lg shadow-lg"
+      />
     </div>
   </section>
 );
