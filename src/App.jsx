@@ -90,19 +90,18 @@ const Hero = () => (
         Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.
       </p>
 
-      {/* QR Code only, no buttons */}
+    <div className="flex flex-col items-center justify-center space-y-4 mt-6">
       <img
         src="/img/qrcode.jpg"
         alt="Order Online QR Code"
-        className="w-48 md:w-64 lg:w-72 rounded-lg shadow-lg border-2 border-white"
+        className="w-48 h-auto rounded-lg shadow-lg"
       />
-      <p className="mt-2 text-sm text-white/80">Scan to order online</p>
       <img
         src="/img/tg_closure.jpg"
         alt="Thanksgiving Closure Notice"
         className="w-80 h-auto rounded-lg shadow-lg"
       />
-    </div>
+  </div>
   </section>
 );
 
