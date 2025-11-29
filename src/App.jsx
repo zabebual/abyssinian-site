@@ -29,10 +29,9 @@ const MENU = {
     { number: 9, name: "Misir Wot", price: 18.95, desc: "Lentils simmered in spicy Ethiopian berbere, vegetable oil onions and garlic." },
     { number: 10, name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split peas cooked with flavored mild sauce, vegetable oil and garlic." },
     { number: 11, name: "Difin Misir Wot", price: 18.95, desc: "Brown lentils simmered in a flavored mild sauce, olive oil and garlic." },
-    { number: 12, name: "Dinch Wot", price: 18.95, desc: "Stew potatoes spiced with berbere. Garlic, onion and ginger." },
-    { number: 13, name: "Veggie Combo (5 items)", price: 22.95, desc: "5 Veggie consists of Misir Wot, Alcha Kik Wot, Difin Misir Wot, Cabbage, and Fossolia (Ethiopian style green bean with carrot)." },
-    { number: 14, name: "Special Veggie Combo (8 items)", price: 27.95, desc: "8 All Vegetarian Option included Cabbage and Fossolia (Ethiopian style green bean with carrot)." },
-    { number: 15, name: "Abyssinian Special Meat/Veggie Platter", price: 29.95, desc: "Choice of Five different dishes from our all vegetarian options and Select Meat options: Doro Wot stew with egg, Alicha Sega Wot, Key Sega Wot." }
+    { number: 13, name: "Veggie Combo", price: 22.95, desc: "5 Veggie consists of Misir Wot, Alcha Kik Wot, Difin Misir Wot, Cabbage, and Fossolia (Ethiopian style green bean with carrot)." },
+    { number: 14, name: "Special Veggie Combo", price: 27.95, desc: "All Vegetarian Option included Cabbage and Fossolia (Ethiopian style green bean with carrot)." }
+    { number: 15, name: "Abyssinian Special Meat/Veggie Platter", price: 29.95, desc: "Choice of Five different dishes from our all vegetarian options and Meat options: Doro Wot stew with egg, Alicha Sega Wot, Key Sega Wot." }
   ],
   chicken: [
     { number: 16, name: "Doro Wot", price: 21.95, desc: "Richly spiced, fragrant, delicious chicken drumstick and egg stew slowly cooked onions, berbere, kibbe (spiced clarified butter), ginger, and garlic." },
@@ -66,7 +65,7 @@ const MENU = {
     { number: 32, name: "Baklava", price: 7.95, desc: "Flaky pastry layered with nuts and sweet syrup." }
   ],
   beverages: [
-    { number: 33, name: "Soda", price: 3.49, desc: "Coke, Diet Coke, Sprite, Ginger Ale, Arizona Iced Tea, Sparkling Water." },
+    { number: 33, name: "Soda", price: 3.50, desc: "Coke, Diet Coke, Sprite, Ginger Ale, Arizona Iced Tea, Sparkling Water." },
     { number: 34, name: "Ethiopian Organic Coffee", price: 4.25, desc: "Freshly brewed Ethiopian coffee." },
     { number: 35, name: "Jebena Coffee with Ceremony", price: 19.95, desc: "Traditional Ethiopian Organic coffee served in jebena pot for 2-4 person." },
     { number: 36, name: "Shahi", price: 3.25, desc: "Green Tea Mint | Lemon, Pure Rooibos (Red Tea), (Herbal Tea) Chamomile Mint, Red Raspberry, & Ginger Tea, Black Tea, (Lipton)." }
