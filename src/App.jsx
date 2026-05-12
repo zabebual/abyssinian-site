@@ -7,7 +7,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 const RESTAURANT = {
   name: "Abyssinian Ethiopian Restaurant",
   address: "100 D Main St, Suite D, Middletown, CT 06457",
-  phone: "(860) 719-6585",
+  phone: "860-807-3798",
   hours: [
     { days: "Mon – Sat", time: "12:00 pm – 9:00 pm" },
     { days: "Sunday", time: "Closed" }
