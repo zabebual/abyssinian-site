@@ -6,7 +6,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 
 const RESTAURANT = {
   name: "Abyssinian Ethiopian Restaurant",
-  address: "100 D Main St, Middletown, CT 06457",
+  address: "100 D Main St, Suite D, Middletown, CT 06457",
   phone: "(860) 719-6585",
   hours: [
     { days: "Mon – Sat", time: "12:00 pm – 9:00 pm" },
@@ -14,7 +14,18 @@ const RESTAURANT = {
   ]
 };
 
-const MENU = {
+const CURRENT_HOURS = [
+  { days: "Monday", time: "Closed" },
+  { days: "Tuesday - Thursday", time: "4:00 PM - 9:00 PM" },
+  { days: "Friday - Saturday", time: "12:00 PM - 9:00 PM" },
+  { days: "Sunday", time: "Closed" },
+];
+
+const SCHEDULE_MESSAGE = "New hours, same great food. Selam everyone, we've made a small change to our schedule.";
+const RESERVATION_MESSAGE = "To place an order or make a reservation for any occasion and date, please call or text 860-807-3798.";
+const THANK_YOU_MESSAGE = "We're happy to help you plan something special! Thank you for your love and support.";
+
+const LEGACY_MENU = {
   appetizers: [
     { number: 1, name: "Sambusa", price: 9.95, desc: "3 spiced pastries filled with a choice of vegetable or chicken." },
     { number: 2, name: "Key Sir Selata", price: 9.95, desc: "Ethiopian beetroot & potato with red onion, jalapeño, and cilantro." },
@@ -30,7 +41,7 @@ const MENU = {
     { number: 10, name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split peas cooked with flavored mild sauce, vegetable oil and garlic." },
     { number: 11, name: "Difin Misir Wot", price: 18.95, desc: "Brown lentils simmered in a flavored mild sauce, olive oil and garlic." },
     { number: 13, name: "Veggie Combo", price: 22.95, desc: "5 Veggie consists of Misir Wot, Alcha Kik Wot, Difin Misir Wot, Cabbage, and Fossolia (Ethiopian style green bean with carrot)." },
-    { number: 14, name: "Special Veggie Combo", price: 27.95, desc: "All Vegetarian Option included Cabbage and Fossolia (Ethiopian style green bean with carrot)." }
+    { number: 14, name: "Special Veggie Combo", price: 27.95, desc: "All Vegetarian Option included Cabbage and Fossolia (Ethiopian style green bean with carrot)." },
     { number: 15, name: "Abyssinian Special Meat/Veggie Platter", price: 29.95, desc: "Choice of Five different dishes from our all vegetarian options and Meat options: Doro Wot stew with egg, Alicha Sega Wot, Key Sega Wot." }
   ],
   chicken: [
@@ -72,6 +83,64 @@ const MENU = {
   ]
 };
 
+const MENU = {
+  appetizers: [
+    { number: 1, name: "Sambusa", price: 9.95, desc: "3 spiced pastries filled with a choice of vegetable or chicken." },
+    { number: 2, name: "Key Sir Selata", price: 9.95, desc: "Ethiopian beetroot & potato with red onion, jalapeno, and cilantro." },
+    { number: 3, name: "Ayib B'e Gomen", price: 9.95, desc: "Fresh collards with cottage cheese, berbere spice & herbs." },
+    { number: 4, name: "Di bulbul Tibs", price: 9.95, desc: "Marinated meatballs with onions, green peppers & fresh salad." },
+    { number: 5, name: "Timatim Salad", price: 9.95, desc: "Abyssinian style fresh tomatoes, onions, green peppers, jalapenos with house dressing." },
+    { number: 6, name: "Falafel", price: 9.95, desc: "Crispy, golden-brown seasoned ground chickpeas, fresh herbs and garlic with fresh salad." }
+  ],
+  vegetarian: [
+    { number: 7, name: "Shiro Wot", price: 18.95, desc: "Ground chickpeas simmered with berbere sauce." },
+    { number: 8, name: "Kosta", price: 18.95, desc: "Sauteed Swiss chard & potatoes slowly cooked in a blend of mild spices." },
+    { number: 9, name: "Misir Wot", price: 18.95, desc: "Lentils simmered in spicy Ethiopian berbere, vegetable oil onions and garlic." },
+    { number: 10, name: "Alcha Kik Wot", price: 18.95, desc: "Yellow split peas cooked with flavored mild sauce, vegetable oil and garlic." },
+    { number: 11, name: "Difin Misir Wot", price: 18.95, desc: "Brown lentils simmered in a flavored mild sauce, olive oil and garlic." },
+    { number: 13, name: "Veggie Combo", price: 22.95, desc: "5 Veggie consists of Misir Wot, Alcha Kik Wot, Difin Misir Wot, Cabbage, and Fossolia (Ethiopian style green bean with carrot)." },
+    { number: 14, name: "Special Veggie Combo", price: 27.95, desc: "All Vegetarian Option included Cabbage and Fossolia (Ethiopian style green bean with carrot)." },
+    { number: 15, name: "Abyssinian Special Meat/Veggie Platter", price: 29.95, desc: "Choice of Five different dishes from our all vegetarian options and Meat options: Doro Wot stew with egg, Alicha Sega Wot, Key Sega Wot." }
+  ],
+  chicken: [
+    { number: 16, name: "Doro Wot", price: 21.95, desc: "Richly spiced, fragrant, delicious chicken drumstick and egg stew slowly cooked onions, berbere, kibbe (spiced clarified butter), ginger, and garlic." },
+    { number: 17, name: "Doro Tibs", price: 19.95, desc: "Herb grilled chicken tossed with Garlic, awaze sauce, onions, ginger & green pepper." }
+  ],
+  beef: [
+    { number: 18, name: "Awaze Tibs", price: 19.95, desc: "Tender cube beef marinated & cooked with awaze sauce, herbs, tomatoes & jalapeno." },
+    { number: 19, name: "Derek Tibs", price: 21.95, desc: "Flavorful Ethiopian stir fry featuring chunks or strips of beef, berbere, cardamon, olive oil, traditional spices, rosemary and cloves." },
+    { number: 20, name: "Alcha Sega Wot", price: 19.95, desc: "Tender beef cubes braised with onion, garlic, ginger, turmeric, and kibe (clarified butter)." },
+    { number: 21, name: "Key Sega Wot", price: 21.95, desc: "Beef cubes stew seasoned with berbere, potato, olive oil, Ethiopian spices, tomatoes, fresh ginger, onions, Garlic and kibbe (clarified butter)." },
+    { number: 22, name: "Gored Gored", price: 22.95, desc: "Lean bottom round beef seasoned with awaze sauce, kibe (clarified butter)." },
+    { number: 23, name: "Kitfo", price: 24.95, desc: "Minced Beef That's Marinated in Spices (Mitmita) And Kibbe (Clarified Butter), Two sides of Ayib. (homemade cottage cheese) and spiced collard greens. Can be ordered; raw/medium &   well done." },
+    { number: 24, name: "Bozena Shiro", price: 19.95, desc: "Stew seasoned mild chickpea powder cooked with onion, garlic, tomatoes and beef." }
+  ],
+  lamb: [
+    { number: 25, name: "Lamb Tibs", price: 24.95, desc: "Tender Cubed Lamb Marinated & Cooked with Herbs, Onion, Tomatoes, Jalapeno." }
+  ],
+  fish: [
+    { number: 26, name: "Asa Tibs", price: 21.95, desc: "Salmon grilled Abyssinian style simmered in red sauce & clarified butter, berbere, onion." }
+  ],
+  rice: [
+    { number: 27, name: "Rice with Beef", price: 19.95, desc: "Tender beef sauteed with aromatic spice, served over perfectly cooked rice and accompanied by sauteed vegetables." },
+    { number: 28, name: "Rice with Fish", price: 21.95, desc: "Fresh, flaky salmon seasoned with Ethiopian spiced and herbs, olive oil served over a bed of fragrant basmati rice." },
+    { number: 29, name: "Rice with Chicken", price: 19.95, desc: "Juicy, spiced Ethiopian style chicken breast cooked to perfection and served over flavorful basmati rice, garlic, and onion with sauteed vegetables." }
+  ],
+  extras: [
+    { number: 30, name: "Injera", price: 3.00, desc: "Gluten-free Ethiopian flatbread made from teff." },
+    { number: 31, name: "Rice", price: 3.00, desc: "Steamed basmati rice." }
+  ],
+  desserts: [
+    { number: 32, name: "Baklava", price: 7.95, desc: "Flaky pastry layered with nuts and sweet syrup." }
+  ],
+  beverages: [
+    { number: 33, name: "Soda", price: 3.50, desc: "Coke, Diet Coke, Sprite, Ginger Ale, Arizona Iced Tea, Sparkling Water." },
+    { number: 34, name: "Ethiopian Organic Coffee", price: 4.25, desc: "Freshly brewed Ethiopian coffee." },
+    { number: 35, name: "Jebena Coffee with Ceremony", price: 19.95, desc: "Traditional Ethiopian Organic coffee served in jebena pot for 2-4 person." },
+    { number: 36, name: "Shahi", price: 3.25, desc: "Green Tea Mint | Lemon, Pure Rooibos (Red Tea), (Herbal Tea) Chamomile Mint, Red Raspberry, & Ginger Tea, Black Tea, (Lipton)." }
+  ]
+};
+
 const Hero = () => (
   <section className="relative h-[80vh] overflow-hidden">
     <video
@@ -90,18 +159,64 @@ const Hero = () => (
         Authentic flavors of Ethiopia – vibrant stews, heirloom coffee & communal hospitality.
       </p>
 
-    <div className="flex flex-row items-center justify-center space-y-4 mt-6">
-      <img
-        src="/img/qrcode.jpg"
-        alt="Order Online QR Code"
-        className="w-48 h-auto rounded-lg shadow-lg"
-      />
-      <img
-        src="/img/tg_closure.jpg"
-        alt="Thanksgiving Closure Notice"
-        className="w-80 h-auto rounded-lg shadow-lg"
-      />
-  </div>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-6">
+        <img
+          src="/img/qrcode.jpg"
+          alt="Order Online QR Code"
+          className="w-48 h-auto rounded-lg shadow-lg"
+        />
+        <img
+          src="/img/tg_closure.jpg"
+          alt="Thanksgiving Closure Notice"
+          className="w-80 h-auto rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+);
+
+const AnnouncementSection = () => (
+  <section id="hours-update" className="bg-stone-50 px-4 py-16">
+    <div className="container mx-auto max-w-5xl text-center">
+      {/* Temporary homepage announcement. Remove this section after the new-hours notice has run. */}
+      <div className="border-y border-amber-700/30 py-10">
+        <p className="text-sm font-semibold uppercase text-amber-700 tracking-wide mb-3">
+          Temporary Notice
+        </p>
+        <h2 className="text-3xl md:text-5xl font-serif text-gray-950 mb-5">
+          New Hours, Same Great Food
+        </h2>
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-700">
+          Selam everyone, we've made a small change to our schedule. From now on, our hours will be:
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8 mt-10 text-gray-950">
+          <div className="border border-amber-700/25 bg-white px-6 py-7 shadow-sm">
+            <p className="font-serif text-2xl md:text-3xl uppercase">Tuesday - Thursday</p>
+            <p className="mt-3 text-2xl md:text-3xl">4:00 PM - 9:00 PM</p>
+          </div>
+          <div className="border border-amber-700/25 bg-white px-6 py-7 shadow-sm">
+            <p className="font-serif text-2xl md:text-3xl uppercase">Friday - Saturday</p>
+            <p className="mt-3 text-2xl md:text-3xl">12:00 PM - 9:00 PM</p>
+          </div>
+        </div>
+
+        <div className="mt-8 text-gray-950">
+          <p className="font-serif text-2xl md:text-3xl uppercase">Monday and Sunday</p>
+          <p className="mt-2 text-2xl md:text-3xl uppercase">Closed</p>
+        </div>
+
+        <div className="mt-10 max-w-4xl mx-auto text-lg md:text-xl text-gray-800 space-y-3">
+          <p>To place an order or make a reservation for any occasion and date, please call or text</p>
+          <a href="tel:8608073798" className="inline-block text-3xl font-semibold text-amber-800 hover:text-amber-700">
+            860-807-3798
+          </a>
+          <p>We're happy to help you plan something special!</p>
+          <p>Thank you for your love and support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
 
@@ -232,11 +347,13 @@ const ContactSection = () => (
       </div>
       <div>
         <h3 className="text-2xl font-semibold mb-4">Hours</h3>
-        {RESTAURANT.hours.map((h,i)=>(<p key={i}>{h.days}: {h.time}</p>))}
+        <p className="mb-3 text-sm text-gray-300">{SCHEDULE_MESSAGE}</p>
+        {CURRENT_HOURS.map((h,i)=>(<p key={i}>{h.days}: {h.time}</p>))}
       </div>
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Stay Connected</h3>
-        <p>Follow us on Instagram & Facebook @AbyssinianFood</p>
+        <h3 className="text-2xl font-semibold mb-4">Order & Reservations</h3>
+        <p>{RESERVATION_MESSAGE}</p>
+        <p className="mt-3">{THANK_YOU_MESSAGE}</p>
         <Button variant="secondary" className="mt-4">Join Email List</Button>
       </div>
     </div>
@@ -274,6 +391,7 @@ export default function App() {
       </header>
       <main className="pt-16">
         <Hero/>
+        <AnnouncementSection/>
         <MenuSection/>
         <AboutSection/>
         <GallerySection/>
