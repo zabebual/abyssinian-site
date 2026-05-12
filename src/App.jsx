@@ -165,11 +165,6 @@ const Hero = () => (
           alt="Order Online QR Code"
           className="w-48 h-auto rounded-lg shadow-lg"
         />
-        <img
-          src="/img/tg_closure.jpg"
-          alt="Thanksgiving Closure Notice"
-          className="w-80 h-auto rounded-lg shadow-lg"
-        />
       </div>
     </div>
   </section>
