@@ -175,9 +175,6 @@ const AnnouncementSection = () => (
     <div className="container mx-auto max-w-5xl text-center">
       {/* Temporary homepage announcement. Remove this section after the new-hours notice has run. */}
       <div className="border-y border-amber-700/30 py-10">
-        <p className="text-sm font-semibold uppercase text-amber-700 tracking-wide mb-3">
-          Temporary Notice
-        </p>
         <h2 className="text-3xl md:text-5xl font-serif text-gray-950 mb-5">
           New Hours, Same Great Food
         </h2>
