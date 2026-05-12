@@ -173,7 +173,6 @@ const Hero = () => (
 const AnnouncementSection = () => (
   <section id="hours-update" className="bg-stone-50 px-4 py-16">
     <div className="container mx-auto max-w-5xl text-center">
-      {/* Temporary homepage announcement. Remove this section after the new-hours notice has run. */}
       <div className="border-y border-amber-700/30 py-10">
         <h2 className="text-3xl md:text-5xl font-serif text-gray-950 mb-5">
           New Hours, Same Great Food
