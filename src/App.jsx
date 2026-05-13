@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const RESTAURANT = {
   name: "Abyssinian Ethiopian Restaurant",
@@ -276,16 +275,15 @@ const MenuCategory = ({ title, items }) => {
 const MenuSection = () => (
   <section id="menu" className="container mx-auto px-4 py-20">
     <SectionTitle>Our Menu</SectionTitle>
-    <Accordion type="multiple" defaultValue={["app","veg"]} className="space-y-6">
+    <div>
       {Object.entries(MENU).map(([catKey, items]) => (
-        <AccordionItem key={catKey} value={catKey}>
-          <AccordionTrigger className="text-xl capitalize">{catKey}</AccordionTrigger>
-          <AccordionContent>
-            <MenuCategory title={catKey.replace(/^[a-z]/,c=>c.toUpperCase())} items={items} />
-          </AccordionContent>
-        </AccordionItem>
+        <MenuCategory
+          key={catKey}
+          title={catKey.replace(/^[a-z]/,c=>c.toUpperCase())}
+          items={items}
+        />
       ))}
-    </Accordion>
+    </div>
   </section>
 );
 
